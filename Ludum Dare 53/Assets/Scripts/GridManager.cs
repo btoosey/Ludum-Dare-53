@@ -10,8 +10,11 @@ public class GridManager : MonoBehaviour
 	[SerializeField] private GridTile gridTile;
 	[SerializeField] private Tilemap tilemap;
 	[SerializeField] private Transform _cam;
+	[SerializeField] private BoxPlacement boxPlacement;
 
-    void Start()
+
+
+	void Start()
     {
 		GenerateGrid();
     }
@@ -28,6 +31,7 @@ public class GridManager : MonoBehaviour
 				}
 				var spawnedGridTile = Instantiate(gridTile, new Vector3(x, y), Quaternion.identity);
 				spawnedGridTile.name = $"Tile {x} {y}";
+				spawnedGridTile.boxPlacement = boxPlacement;
 			}
 		}
 

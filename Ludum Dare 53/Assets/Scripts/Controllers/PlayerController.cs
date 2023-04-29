@@ -66,7 +66,7 @@ namespace PlayerController
         [SerializeField] private LayerMask _finishLayer;
         [SerializeField] private int _detectorCount = 3;
         [SerializeField] private float _detectionRayLength = 0.1f;
-        [SerializeField] [Range(0.1f, 0.3f)] private float _rayBuffer = 0.1f; // Prevents side detectors hitting the ground
+        [SerializeField] [Range(0.08f, 0.3f)] private float _rayBuffer = 0.1f; // Prevents side detectors hitting the ground
 
         private RayRange _raysUp, _raysRight, _raysDown, _raysLeft;
         private bool _colUp, _colRight, _colDown, _colLeft;
