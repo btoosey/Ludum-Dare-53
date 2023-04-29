@@ -9,6 +9,7 @@ public class GridTile : MonoBehaviour
 	private GameObject player;
 	private GameObject finish;
 
+
 	private void Start()
 	{
 		player = GameObject.FindWithTag("Player");
@@ -17,7 +18,7 @@ public class GridTile : MonoBehaviour
 
 	void OnMouseEnter()
 	{
-		if (!DistanceOkay())
+		if (!DistanceOkay() || !BoxesRemaining())
 		{
 			return;
 		}
@@ -31,7 +32,7 @@ public class GridTile : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		if (!DistanceOkay())
+		if (!DistanceOkay() || !BoxesRemaining())
 		{
 			selectedGridTile.SetActive(false);
 		} else
@@ -42,25 +43,25 @@ public class GridTile : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (!DistanceOkay())
+		if (!DistanceOkay() || !BoxesRemaining())
 		{
 			return;
 		}
 		Destroy(gameObject);
 		boxPlacement.PlaceBox(new Vector3Int((int)gameObject.transform.position.x, (int)gameObject.transform.position.y));
+		ScoreManager.Instance.AddLevelBox();
 	}
 	
 	private bool DistanceOkay()
 	{
-		if ((PlayerDistance() > 1 && PlayerDistance() < 3) && FinishDistance() > 2)
+		if (PlayerDistance() > 1 && PlayerDistance() < 3 && FinishDistance() > 2)
 		{
 			return true;
 		}
 		else
 		{
 			return false;
-		}	
-		;
+		}
 	}
 	private float PlayerDistance()
 	{
@@ -69,5 +70,17 @@ public class GridTile : MonoBehaviour
 	private float FinishDistance()
 	{
 		return Vector3.Distance(gameObject.transform.position, finish.transform.position);
+	}
+
+	private bool BoxesRemaining()
+	{
+		if (ScoreManager.Instance.GetMaxBoxes() > ScoreManager.Instance.currentBoxes)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

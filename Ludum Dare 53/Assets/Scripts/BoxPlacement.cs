@@ -9,8 +9,6 @@ public class BoxPlacement : MonoBehaviour
 	public Tile boxTile;
 	public Tilemap tilemap;
 
-	[ContextMenu("Paint")]
-
 	public void PlaceBox(Vector3Int position)
 	{
 		tilemap.SetTile(position, boxTile);
