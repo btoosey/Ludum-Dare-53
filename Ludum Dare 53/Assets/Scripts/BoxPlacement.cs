@@ -5,7 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class BoxPlacement : MonoBehaviour
 {
-
 	public Tile boxTile;
 	public Tilemap tilemap;
 

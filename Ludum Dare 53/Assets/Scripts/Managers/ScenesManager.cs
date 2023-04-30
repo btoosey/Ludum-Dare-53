@@ -46,10 +46,10 @@ public class ScenesManager : MonoBehaviour
 		SceneManager.LoadScene(Scene.Level01.ToString());
 	}
 
-/*	public void LoadNextScene()
+	public void LoadNextScene()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}*/
+	}
 
 	public void ReloadScene()
 	{
