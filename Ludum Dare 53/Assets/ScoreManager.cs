@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class ScoreManager : MonoBehaviour
 
 	public int GetMaxBoxes()
 	{
-		return levelMaxBoxes[SceneManager.GetActiveScene().buildIndex];
+		return levelMaxBoxes[ScenesManager.Instance.GetActiveScene()];
 	}
 
 	public void AddLevelBox()
