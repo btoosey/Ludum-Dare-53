@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: boxTile_0
+  m_Name: ground_decorations_6
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 14a8f888575d23649858a083182ae81a, type: 3}
+  m_Sprite: {fileID: -272939922, guid: c5f5fc9f67189e14981711ce6a580151, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
