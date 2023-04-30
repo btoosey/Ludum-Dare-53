@@ -8,12 +8,14 @@ public class GridTile : MonoBehaviour
 	public BoxPlacement boxPlacement;
 	private GameObject player;
 	private GameObject finish;
+	private GameObject respawn;
 
 
 	private void Start()
 	{
 		player = GameObject.FindWithTag("Player");
 		finish = GameObject.FindWithTag("Finish");
+		respawn = GameObject.FindWithTag("Respawn");
 	}
 
 	void OnMouseEnter()
@@ -54,7 +56,7 @@ public class GridTile : MonoBehaviour
 	
 	private bool DistanceOkay()
 	{
-		if (PlayerDistance() > 1 && PlayerDistance() < 3 && FinishDistance() > 2)
+		if (PlayerDistance() > 1 && PlayerDistance() < 3 && FinishDistance() > 1.5 && RespawnDistance() > 1)
 		{
 			return true;
 		}
@@ -70,6 +72,11 @@ public class GridTile : MonoBehaviour
 	private float FinishDistance()
 	{
 		return Vector3.Distance(gameObject.transform.position, finish.transform.position);
+	}
+
+	private float RespawnDistance()
+	{
+		return Vector3.Distance(gameObject.transform.position, respawn.transform.position);
 	}
 
 	private bool BoxesRemaining()
