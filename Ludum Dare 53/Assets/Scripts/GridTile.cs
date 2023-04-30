@@ -20,7 +20,7 @@ public class GridTile : MonoBehaviour
 
 	void OnMouseEnter()
 	{
-		if (!DistanceOkay() || !BoxesRemaining())
+		if (!DistanceOkay() || !BoxesRemaining() || ScenesManager.Instance.canReset == false)
 		{
 			return;
 		}
@@ -34,7 +34,7 @@ public class GridTile : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		if (!DistanceOkay() || !BoxesRemaining())
+		if (!DistanceOkay() || !BoxesRemaining() || ScenesManager.Instance.canReset == false)
 		{
 			selectedGridTile.SetActive(false);
 		} else
@@ -45,7 +45,7 @@ public class GridTile : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (!DistanceOkay() || !BoxesRemaining())
+		if (!DistanceOkay() || !BoxesRemaining() || ScenesManager.Instance.canReset == false)
 		{
 			return;
 		}

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace PlayerController
+namespace PlayerMovementController
 {
     public class PlayerController : MonoBehaviour, IPlayerController
     {
@@ -63,7 +63,6 @@ namespace PlayerController
 
         [Header("COLLISION")] [SerializeField] private Bounds _characterBounds;
         [SerializeField] private LayerMask _groundLayer;
-        [SerializeField] private LayerMask _finishLayer;
         [SerializeField] private int _detectorCount = 3;
         [SerializeField] private float _detectionRayLength = 0.1f;
         [SerializeField] [Range(0.08f, 0.3f)] private float _rayBuffer = 0.1f; // Prevents side detectors hitting the ground
@@ -96,21 +95,10 @@ namespace PlayerController
             _colLeft = RunDetection(_raysLeft, _groundLayer);
             _colRight = RunDetection(_raysRight, _groundLayer);
 
-
-            if (RunDetection(_raysUp, _finishLayer))
-            {
-                Debug.Log("Level complete");
-            }
-
             bool RunDetection(RayRange range, LayerMask layer)
             {
                 return EvaluateRayPositions(range).Any(point => Physics2D.Raycast(point, range.Dir, _detectionRayLength, layer));
             }
-
-            if (Physics2D.OverlapBox(transform.position, new Vector2(0.5f, 0.5f), 0, _finishLayer))
-			{
-                Debug.Log("Hi");
-			}
         }
 
         private void CalculateRayRanged()

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
 	public static ScenesManager Instance;
+	public bool canReset = true;
 	public enum Scene
 	{
 		Level01
@@ -18,6 +19,11 @@ public class ScenesManager : MonoBehaviour
 
 	private void Update()
 	{
+		if (canReset == false)
+		{
+			return;
+		}
+
 		if (Input.GetKeyDown(KeyCode.R))
 		{
 			ReloadScene();

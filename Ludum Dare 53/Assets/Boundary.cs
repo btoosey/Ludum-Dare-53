@@ -10,4 +10,5 @@ public class Boundary : MonoBehaviour
 	{
 		player.transform.position = respawnPoint.transform.position;
 	}
+
 }

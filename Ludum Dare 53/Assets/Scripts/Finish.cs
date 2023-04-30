@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
+
+	public Canvas levelEndPanel;
+	public Boundary boundary;
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Debug.Log("Level Complete");
+		ScenesManager.Instance.canReset = false;
+		levelEndPanel.transform.gameObject.SetActive(true);
+
+
 	}
 }
