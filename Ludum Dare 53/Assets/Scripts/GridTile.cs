@@ -56,7 +56,7 @@ public class GridTile : MonoBehaviour
 	
 	private bool DistanceOkay()
 	{
-		if (PlayerDistance() > 1 && PlayerDistance() < 3 && FinishDistance() > 1.5 && RespawnDistance() > 1)
+		if (PlayerDistance() > 0.8 && PlayerDistance() < 3 && FinishDistance() > 1.5 && RespawnDistance() > 1)
 		{
 			return true;
 		}

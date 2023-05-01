@@ -6,9 +6,9 @@ public class ScoreManager : MonoBehaviour
 {
 	
 	public static ScoreManager Instance;
-	[System.NonSerialized] public int[] levelMaxBoxes = {0, 0, 0, 1, 3, 4, 4, 5};
-	[System.NonSerialized] public int[] twoStars = {0, 0, 0, 1, 2, 3, 3, 4};
-	[System.NonSerialized] public int[] threeStars = {0, 0, 0, 1, 1, 2, 2, 3};
+	[System.NonSerialized] public int[] levelMaxBoxes = {0, 0, 0, 1, 3, 4, 2, 3, 5, 6, 0};
+	[System.NonSerialized] public int[] twoStars =		{0, 0, 0, 1, 2, 3, 2, 2, 4, 4, 0};
+	[System.NonSerialized] public int[] threeStars =	{0, 0, 0, 1, 1, 2, 1, 1, 3, 3, 0};
 	public int currentBoxes = 0;
 	public GameObject stars;
 	public GameObject wizard;
